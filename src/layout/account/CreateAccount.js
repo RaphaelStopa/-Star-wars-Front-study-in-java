@@ -1,12 +1,12 @@
 import './Login.css';
 import {Link} from 'react-router-dom'
 
-function Login() {
+function CreateAccount() {
     return (
       <div className="wrapper">
     <div id="formContent">
-    <h2 className="active" ><Link to='/login'>Sign In</Link> </h2>
-      <h2 className="inactive underlineHover" ><Link to='/create-account'>Sign Up</Link> </h2>
+      <h2 className="inactive underlineHover" ><Link to='/login'>Sign In</Link> </h2>
+      <h2 className="active" ><Link to='/create-account'>Sign Up</Link> </h2>
       <div className="In">
         <img src="../../../assets/img/icon.png" id="icon" alt="User Icon" />
       </div>
@@ -26,5 +26,4 @@ function Login() {
     );
   }
   
-  export default Login;
-  
+  export default CreateAccount;

@@ -1,12 +1,16 @@
 import logo from './logo.svg';
+import {BrowserRouter as Router} from 'react-router-dom'
 import './App.css';
+import NavRoute from './router';
+import { Fragment } from 'react';
 
 function App() {
   return (
+    <Fragment>
     <div className="main-bar">
         <nav>
             <input type="checkbox" id="check"></input>
-            <label htmlFor="check" class="checkbtn">
+            <label htmlFor="check" className="checkbtn">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -23,7 +27,14 @@ function App() {
                 <li><a href="#">Contact Us</a></li>
             </ul>
         </nav>
+
+       
     </div>
+    <Router>
+    <NavRoute></NavRoute>
+    </Router>
+
+    </Fragment>
 
   );
 }

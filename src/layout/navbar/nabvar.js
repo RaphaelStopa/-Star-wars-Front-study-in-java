@@ -1,11 +1,12 @@
 import './Login.css';
+import {Link} from 'react-router-dom'
 
 function NavBar() {
   return (
     <div className="main-bar">
         <nav>
             <input type="checkbox" id="check"></input>
-            <label htmlFor="check" class="checkbtn">
+            <label htmlFor="check" className="checkbtn">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -15,11 +16,8 @@ function NavBar() {
             </div>
             <ul>
                 <li className="active"><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Our Services</a></li>
-                <li><a href="#">Our Gallery</a></li>
-                <li><a href="#">Enquiry</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><Link to='/'>About Us</Link></li>
+                <li><Link to='/servicess'>Our Services</Link></li>
             </ul>
         </nav>
     </div>
