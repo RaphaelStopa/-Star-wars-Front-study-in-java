@@ -1,6 +1,6 @@
 import {Routes, Route} from 'react-router-dom'
-import CreateAccount from './layout/account/CreateAccount';
-import Login from './layout/account/Login';
+import CreateAccount from './layout/account/CreateAccount.tsx';
+import Login from './layout/account/Login.tsx';
 
 
 export default function NavRoute() {
