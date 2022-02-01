@@ -1,4 +1,3 @@
-
 import {Routes, Route} from 'react-router-dom'
 import CreateAccount from './layout/account/CreateAccount';
 import Login from './layout/account/Login';
