@@ -2,32 +2,60 @@ import './Login.css';
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom'
 import type { SyntheticEvent } from 'react'
-
 import { Authentication } from '../../model/authentication';
 import axios, { AxiosResponse } from 'axios';
+import { api } from '../../api/api';
+import { authenticate } from '../../api/authentication-api';
+import registerApi from '../../api/register-api';
+import {login} from '/src/auth/authActions.js'
+import allsectorsService from '../../services/allsectors-service';
 
-
-
-
-
-
-function Login() {
+const AllFilters = ({ setFilterRequest }) =>  {
 
   const[email, setEmail] = useState('');
   const[password, setPassword] = useState('');
 
   const nha ={
-    login: 'biscoito',
-    password:'12345',
-    cpf: '123532123',
-    emial: 'safaifinho@hotmial.com'
+    email: 'admin@localhost',
+    password: 'admin',
+    name: '2222'
   }
+
+
+  const accessToken= 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBsb2NhbGhvc3QiLCJhdXRoIjoiUk9MRV9BRE1JTixST0xFX1VTRVIiLCJleHAiOjE2NDQ3NzE5OTZ9.in6IeYIAK05bUZ-kFOpySgHPP60VC8VcWdXWHFjB6Zg1AtGwm3CbPpvs9K_91ompKDCVR3sEisJ2cajBNyMcAA'
+  const apiUrl= 'http://localhost:8080/api/authenticate'
+
+  const authAxios = axios.create({
+    baseURL: apiUrl,
+    headers: {
+      Authorization: 'Bearer ' + accessToken //the token is a variable which holds the token
+    }
+
+  })
+
+  // allsectorsService.getAllSectors()
 
 
   const submit = async (e: SyntheticEvent) => {
     e.preventDefault();
 
-    const nho = axios.post('http://localhost:8080/api/authenticate', nha)
+    await authAxios.post(apiUrl, nha)
+
+    await authAxios.get('http://localhost:8080/api/force-users')
+
+//     axios.get('http://localhost:8080/api/force-users', {
+//  headers: {
+//    Authorization: 'Bearer ' + accessToken //the token is a variable which holds the token
+//  }
+// })
+
+
+    // registerApi
+    
+
+    // const nho = axios.post('http://localhost:8080/api/authenticate', nha)
+
+    // const nhf = api
 
     //  const nha = await fetch('http://localhost:8080/api/authenticate', {
     //   method: 'POST',
@@ -38,7 +66,7 @@ function Login() {
     //     password
     //   })
     // })
-    console.log(nho)
+    // console.log(nho)
   }
 
 
