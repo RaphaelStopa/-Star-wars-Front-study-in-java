@@ -4,13 +4,17 @@ import { useState } from 'react';
 import React from 'react';
 import type { SyntheticEvent } from 'react'
 
+
 function CreateAccount() {
 
   const[login, setLogin] = useState('');
   const[cpf, setCpf] = useState('');
   const[email, setEmail] = useState('');
   const[password, setPassword] = useState('');
-  const [redirect, setRedirect] = useState(false);
+  const[redirect, setRedirect] = useState(false);
+
+ 
+
 
   const submit = async (e: SyntheticEvent) => {
     e.preventDefault();
@@ -60,3 +64,25 @@ function CreateAccount() {
   export default CreateAccount;
 
   // https://www.youtube.com/watch?v=OUP-urBy1k4
+
+
+//   function* handleRegister(action: ReturnType<typeof registerRequest>) {
+//     try {
+//         const result: AxiosResponse<Authentication> = yield call(registerApi.registerFree, action.payload);
+
+//         if (result.status !== 201) {
+//             const errorMessage: string = result.status === 401 ? 'Cannot register this user' : 'An unknown error occured.';
+//             yield put(registerError(errorMessage));
+//             return;
+//         } else {
+//             yield put(registerSuccess());
+//             return;
+//         }
+//     } catch (err) {
+//         if (err instanceof Error && err.stack) {
+//             yield put(registerError(err.stack));
+//         } else {
+//             yield put(registerError('An unknown error occured.'));
+//         }
+//     }
+// }

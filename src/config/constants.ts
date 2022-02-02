@@ -8,12 +8,7 @@ export const SERVER_API_URL = process.env.SERVER_API_URL;
 
 export const AUTHORITIES = {
     ADMIN: 'ROLE_ADMIN',
-    MANAGER: 'ROLE_MANAGER',
-    DIRECT_RESPONSIBLE: 'ROLE_DIRECT_RESPONSIBLE',
-    DIRECTOR: 'ROLE_DIRECTOR',
-    GPASP: 'ROLE_GPASP',
     USER: 'ROLE_USER',
-    ANONYMOUS: 'ROLE_ANONYMOUS',
 };
 
 export const messages = {

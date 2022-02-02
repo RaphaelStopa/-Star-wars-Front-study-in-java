@@ -3,26 +3,42 @@ import React, {useState} from 'react';
 import {Link} from 'react-router-dom'
 import type { SyntheticEvent } from 'react'
 
+import { Authentication } from '../../model/authentication';
+import axios, { AxiosResponse } from 'axios';
+
+
+
+
+
 
 function Login() {
 
   const[email, setEmail] = useState('');
   const[password, setPassword] = useState('');
 
+  const nha ={
+    login: 'biscoito',
+    password:'12345',
+    cpf: '123532123',
+    emial: 'safaifinho@hotmial.com'
+  }
+
 
   const submit = async (e: SyntheticEvent) => {
     e.preventDefault();
 
-     const nha = await fetch('http://localhost:8080/api/authenticate', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      credentials: 'include',
-      body: JSON.stringify({
-        email,
-        password
-      })
-    })
-    console.log(nha)
+    const nho = axios.post('http://localhost:8080/api/authenticate', nha)
+
+    //  const nha = await fetch('http://localhost:8080/api/authenticate', {
+    //   method: 'POST',
+    //   headers: {'Content-Type': 'application/json'},
+    //   credentials: 'include',
+    //   body: JSON.stringify({
+    //     email,
+    //     password
+    //   })
+    // })
+    console.log(nho)
   }
 
 
